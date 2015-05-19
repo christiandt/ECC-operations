@@ -1,3 +1,5 @@
+from copy import copy
+
 def egcd(a, b):
     if a == 0:
         return (b, 0, 1)
@@ -49,33 +51,37 @@ def adding(x1, y1, x2, y2):
 
 
 
-## Addition
-#x=3.0
-#y=13.0
+# Addition
+print "Addition"
 
-#for i in range(2, 29):
+x = 3.0
+y = 13.0
+
+x1 = copy(x)
+y1 = copy(y)
+
+print "[1]P = ("+str(x) + ", " + str(y) + ")"
+
+for i in range(2, 29):
 	#print "i:",i	
-#	x, y = adding(3.0, 13.0, x, y)
-#	if x == None:
-#		print "["+str(i)+"]P = Infinity"
-#		break
-#	print "["+str(i)+"]P = ("+str(x) + ", " + str(y) + ")"
+	x, y = adding(x1, y1, x, y)
+	if x == None:
+		print "["+str(i)+"]P = Infinity"
+		break
+	print "["+str(i)+"]P = ("+str(x) + ", " + str(y) + ")"
 
 
-## Doubling
-#x = 1
-#y = 7
+# Doubling
+print "Doubling"
+
+x = 1
+y = 7
 	
-#count = 1
-#for i in range(5):
-#	x, y = doubling(x, y)
-#	count = count*2
-#	print "["+str(count)+"]P = ("+str(x) + ", " + str(y) + ")"
+print "[1]P = ("+str(x) + ", " + str(y) + ")"
 
-
-#print adding(7.0, 5.0, 7.0, 12.0)
-print doubling(7, 5)
-
-
-
+count = 1
+for i in range(5):
+	x, y = doubling(x, y)
+	count = count*2
+	print "["+str(count)+"]P = ("+str(x) + ", " + str(y) + ")"
 
